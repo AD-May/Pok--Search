@@ -16,6 +16,7 @@ const imageContainer = document.getElementById("image-container");
 const hiddenElements = document.querySelectorAll(".hidden");
 let pokemonUrl;
 
+// Formats the user input such that special characters are removed, spaces are hyphenated, and male or female Unicode characters are formatted so they may be used by the API
 const parseInput = (input) => {
     let cleanedInput = input;
     const regexChars = /[!@#$%^&*()=+`~{}\|\[\];:"'<>,.?\/_-]/g;
@@ -86,6 +87,7 @@ const getStats = (pokemon) => {
 
 }
 
+// A function returning a boolean for processing whether a searched Pokemon exists in the API
 const foundPokemon = (input, pokemon) => {
     let found = false;
     pokemon.forEach((el) => {
@@ -113,7 +115,7 @@ const resetPokemon = () => {
     imageContainer.innerHTML = "";
 }
 
-
+// Fetches the main Pokemon JSON
 const fetchData = async () => {
     try {
         const res = await fetch(endpoint);
@@ -125,6 +127,7 @@ const fetchData = async () => {
     }
 }
 
+// Fetches information specific to searched Pokemon
 const fetchPokemon = async () => {
     try {
         const res = await fetch(pokemonUrl);
