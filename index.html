@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Prompt&display=swap" rel="stylesheet">
+        <title>Pokémon Search</title>
+    </head>
+    <body>
+        <header>
+            <img src="pokeball.png" alt="Image of a Pokéball">
+            <h1 id="title">Poké-Search</h1>
+        </header>
+        <main>
+            <section id="pokedex">
+                <div id="left-display" class="display">
+                    <fieldset id="input-area">
+                        <label id="search-label" for="search-input">Search for Pokémon Name or ID:</label>
+                        <input id="search-input" placeholder="Enter Pokémon name" required>
+                        <button id="search-button" aria-label="Press to search for Pokémon">Search</button>
+                    </fieldset>
+                    <div id="result-container">
+                        <span id="pokemon-name" class="hidden"></span>
+                        <span id="pokemon-id" class="hidden"></span>
+                        <span id="weight-container" class="hidden"><span id="weight"></span></span>
+                        <span id="height-container" class="hidden"><span id="height"></span></span>
+                        <div id="image-container" class="hidden"></div>
+                        <div id="types" class="hidden"></div>
+                    </div>
+                </div>
+                <div id="right-display" class="display">
+                    <div id="cutout"></div>
+                    <table id="stat-table">
+                        <thead id="table-heading">
+                            <tr>
+                                <td>Base</td>
+                                <td>Stats</td>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body">
+                            <tr>
+                                <td>HP:</td>
+                                <td id="hp" class="table-stat"></td>
+                            </tr>
+                            <tr>
+                                <td>Attack:</td>
+                                <td id="attack" class="table-stat"></td>
+                            </tr>
+                            <tr>
+                                <td>Defense:</td>
+                                <td id="defense" class="table-stat"></td>
+                            </tr>
+                            <tr>
+                                <td>Sp. Attack:</td>
+                                <td id="special-attack" class="table-stat"></td>
+                            </tr>
+                            <tr>
+                                <td>Sp. Defense:</td>
+                                <td id="special-defense" class="table-stat"></td>
+                            </tr>
+                            <tr>
+                                <td>Speed:</td>
+                                <td id="speed" class="table-stat"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+        <script src="script.js"></script>
+    </body>
+</html>
