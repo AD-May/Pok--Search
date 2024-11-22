@@ -1,11 +1,9 @@
 const endpoint = "https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/"; 
-const searchInput = document.getElementById("search-input");
 const searchBtn = document.getElementById("search-button");
 const pokemonName = document.getElementById("pokemon-name");
 const pokemonId = document.getElementById("pokemon-id");
 const weightSpan = document.getElementById("weight");
 const heightSpan = document.getElementById("height");
-const typesContainer = document.getElementById("types");
 const hp = document.getElementById("hp");
 const attack = document.getElementById("attack");
 const defense = document.getElementById("defense");
@@ -29,6 +27,7 @@ const parseInput = (input) => {
 
 
 const appendData = (data) => {
+    const searchInput = document.getElementById("search-input");
     let cleanedInput = parseInput(searchInput.value.toLowerCase());
     const { results } = data;
     if (foundPokemon(cleanedInput, results)) {
@@ -54,6 +53,7 @@ const getSprite = (pokemon) => {
 }
 
 const getType = (pokemon) => {
+    const typesContainer = document.getElementById("types");
     const { types } = pokemon;
     
     types.forEach((el) => {
@@ -108,6 +108,7 @@ const resetPokemon = () => {
     heightSpan.innerText = "";
     types.innerHTML = "";
     hp.innerText = "";
+    attack.innerText = "";
     defense.innerText = "";
     spAttack.innerText = "";
     spDefense.innerText = "";
